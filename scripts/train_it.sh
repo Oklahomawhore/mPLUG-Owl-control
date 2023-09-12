@@ -14,7 +14,7 @@ else
     RANK=0
 fi
 
-DISTRIBUTED_ARGS="--nproc_per_node 8 \
+DISTRIBUTED_ARGS="--nproc_per_node 2 \
                   --nnodes ${WORLD_SIZE} \
                   --node_rank ${RANK} \
                   --master_addr ${MASTER_ADDR} \
@@ -27,8 +27,8 @@ SAVE_PATH="./output/${SAVE_NAME}/"
 
 max_length=2048
 micro_batch_size=4
-global_batch_size=256
-gradient_accumulation_steps=1
+global_batch_size=128
+gradient_accumulation_steps=16
 
 # train_iters = total_data * train_epochs // global_batch_size
 # 361481 * 3 / 256 = 4236

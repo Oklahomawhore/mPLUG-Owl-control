@@ -170,3 +170,10 @@ tags
 
 # ruff
 .ruff_cache
+
+
+# Dataset and models
+MAGAer13/
+*.json
+*.jsonl
+multi-modal_mplug_owl_multimodal-dialogue_7b/
